@@ -1,0 +1,24 @@
+<h1>This is the index of Blogs</h1>
+
+
+
+<table>
+	<tr>
+		<th> <b>Title</b></th>
+
+		<th> <b>  Description</b></th>
+
+		
+	</tr>
+	<% @blogs.each do |b| %>
+
+	<tr>
+		<td><b><%= b.title %></b></td>
+		<td><b><%= b.description %></b></td>
+		<td><b><%= link_to "Edit",edit_blog_path(b) %></b></td>
+		<td><b><%= link_to "Show",blog_path(b) %></b></td>
+
+		<td><b><%=link_to "Delete", blog_path(b), method: :delete,data: { confirm:"Are you Sure?"} %></b></td>
+	</tr>
+</table>
+<% end %>
