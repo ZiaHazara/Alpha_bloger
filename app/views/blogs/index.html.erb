@@ -1,24 +1,38 @@
-<h1>This is the index of Blogs</h1>
+<h1 style="font-size: 4em;color: #000">This is the index of Blogs</h1>
 
 
 
-<table>
-	<tr>
-		<th> <b>Title</b></th>
-
-		<th> <b>  Description</b></th>
-
-		
-	</tr>
-	<% @blogs.each do |b| %>
-
-	<tr>
-		<td><b><%= b.title %></b></td>
-		<td><b><%= b.description %></b></td>
-		<td><b><%= link_to "Edit",edit_blog_path(b) %></b></td>
-		<td><b><%= link_to "Show",blog_path(b) %></b></td>
-
-		<td><b><%=link_to "Delete", blog_path(b), method: :delete,data: { confirm:"Are you Sure?"} %></b></td>
-	</tr>
-</table>
-<% end %>
+<div class="jumbotron">
+	<div class="container-fluid">
+		<div class="row" style="font-size:2em;">
+			<div class="col-md-3">
+				<b>Title</b>
+			</div>
+			<div class="col-md-3">
+				<b>  Description</b>
+			</div>
+			<div class="col-md-3">
+				<b>Actions</b>
+			</div>
+			<div class="col-md-3">
+			</div>
+		</div>
+		<% @blogs.each do |b| %>
+		<div class="row" style="font-size:1em;"">
+			<div class="col-md-3">
+				<b><%= b.title %></b>
+			</div>
+			<div class="col-md-3">
+				<b><%= b.description %></b>
+		    </div>
+		    <div class="col-md-3">
+		    	<b><%= link_to "Edit",edit_blog_path(b),class: "btn btn-sm btn-success" %></b>
+		    	<b><%= link_to "Show",blog_path(b),class: "btn btn-sm btn-primary" %></b></td>
+		    	<b><%=link_to "Delete", blog_path(b),class: "btn btn-sm btn-danger", method: :delete,data: { confirm:"Are you Sure?"} %></b>
+		    </div>
+		    <div class="col-md-3">
+		    </div>
+		</div>
+		<% end %>
+	</div>
+</div>

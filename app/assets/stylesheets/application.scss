@@ -19,7 +19,7 @@ $btn-default-bg: #fff;
 .center{
 	text-align: center;
 }
-.jumbotron{
+#jumbo{
 	background-image: asset-url('region-afghanistan.jpg');
 	background-size: cover;
 	weight: 100%;
@@ -56,4 +56,9 @@ footer ul{
 footer ul li{
 	float: left;
 	margin-left: 15px;
+}
+.blog-action{
+	border-top: 1px solid #eaeaea;
+	padding-top: 5px;
+
 }

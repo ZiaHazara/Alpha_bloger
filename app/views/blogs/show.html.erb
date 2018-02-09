@@ -1,16 +1,14 @@
 <h1>This is the show page of <%= @blog.title %></h1>
 
-<table>
-	<th>
-		<tr><b>Title  </b></tr>
-		
-	</th>
-	<th>
-		<tr><b>  Description</b></tr> <br/>
-	</th>
-	<td>
-		<tr><%=   @blog.title %></tr>
-		<tr><%=   @blog.description %></tr>
-	</td>
-	
-</table>
+<h2 align="center">Title: <strong><%=@blog.title %></strong></h2>
+<div class="well col-md-8 col-md-offset-2">
+	<h4 class="center" style="margin-top: 0;"><strong> Description</strong></h4>
+	<hr>
+	<%= simple_format(@blog.description) %>
+	<div class="blog-action">
+		<b><%= link_to "Edit the blog",edit_blog_path(@blog),class: "btn btn-xs btn-success" %></b>
+		<b><%= link_to "Show the blogs",blogs_path,class: "btn btn-xs btn-primary" %></b></td>
+        <b><%=link_to "Delete this blog", blog_path(@blog),class: "btn btn-xs btn-danger", method: :delete,data: { confirm:"Are you Sure?"} %></b>
+	</div>
+</div>
+

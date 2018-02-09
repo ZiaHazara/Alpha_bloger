@@ -1,11 +1,4 @@
-<% if @blog.errors.any? %>
-  <ul>
-  	<h2>This is the list of errors.</h2>
-  	<% @blog.errors.full_messages.each do |msg| %>
-   	<li> <%=msg%> </ul>
-   	<% end %>
-  </ul>
-  <% end %>
+<%= render 'shared/errors',obj: @blog%>
 
 
 
